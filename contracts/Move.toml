@@ -1,0 +1,17 @@
+[package]
+name = "DataDex"
+version = "1.0.0"
+authors = ["alienworld"]
+
+[addresses]
+DataDex = "_"
+
+[dev-addresses]
+DataDex = "0x9219ea05252befa9b422235d393f332b083e9db60230ce21a479463466dedf3e"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
