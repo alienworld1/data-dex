@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* Persona-inspired cel-shaded animations and effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(2deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom cel-shaded text shadows */
+.cel-text-shadow {
+  text-shadow: 
+    2px 2px 0px rgba(0, 0, 0, 0.8),
+    -1px -1px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* Floating animations for background elements */
+.floating-1 { animation: float 6s ease-in-out infinite; }
+.floating-2 { animation: float 8s ease-in-out infinite reverse; }
+.floating-3 { animation: float 10s ease-in-out infinite; }
+.floating-4 { animation: float 7s ease-in-out infinite reverse; }
+
+/* Persona-style button effects */
+.persona-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.persona-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.persona-button:hover::before {
+  left: 100%;
+}
+
+/* Glass morphism effect */
+.glass-morph {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon glow effects */
+.neon-yellow {
+  box-shadow: 
+    0 0 5px #fbbf24,
+    0 0 10px #fbbf24,
+    0 0 15px #fbbf24;
+}
+
+.neon-cyan {
+  box-shadow: 
+    0 0 5px #06b6d4,
+    0 0 10px #06b6d4,
+    0 0 15px #06b6d4;
+}
+
+.neon-purple {
+  box-shadow: 
+    0 0 5px #a855f7,
+    0 0 10px #a855f7,
+    0 0 15px #a855f7;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(45deg, #fbbf24, #f97316, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(30deg); }
+}
+
+/* Smooth reveal animation */
+.reveal {
+  animation: slide-in-up 0.8s ease-out forwards;
+}
